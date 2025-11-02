@@ -22,6 +22,14 @@ const roomschema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    cost: {
+      type: String,
+      required: true,
+    },
+    discount: {
+      type: String,
+      required: true,
+    },
   },
   { timestamps: true }
 );

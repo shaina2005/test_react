@@ -12,7 +12,27 @@ export const newRoom = async (req, res) => {
       });
     }
 
-    const book_new_room = { email, name, type, duration, requireDate };
+    let cost;
+    let discount = 0;
+    if (type == "day") {
+      cost = duration * 2000;
+    } else if (type == "hour") {
+      cost = duration * 300;
+    }
+
+    if (cost >= 4000) {
+      discount = cost * 0.1;
+      cost = cost - discount;
+    }
+    const book_new_room = {
+      email,
+      name,
+      type,
+      duration,
+      requireDate,
+      cost,
+      discount,
+    };
     await Bookroom.create(book_new_room);
     res.status(200).json({
       message: "Room booked successfully",
