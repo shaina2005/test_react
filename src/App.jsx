@@ -16,7 +16,7 @@ function App() {
 
   return (
     <div className="app-container">
-      <BrowserRouter>
+      < >
         {isLogin === "true" ? (
           <>
             <Navbar setIsLogin={setIsLogin} />
@@ -31,7 +31,7 @@ function App() {
             <Route path="/register" element={<Register />} />
           </Routes>
         )}
-      </BrowserRouter>
+      </>
     </div>
   );
 }

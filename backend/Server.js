@@ -5,7 +5,7 @@ import RegisterRoutes from "./routes/RegisterRoutes.js";
 import LoginRoutes from "./routes/LoginRoutes.js";
 import BookroomRoutes from "./routes/BookroomRoutes.js";
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 const app = express();
 const customMiddleware = (req, res, next) => {
   const now = new Date().toLocaleDateString();
@@ -19,6 +19,9 @@ app.use(express.json());
 app.use(cors());
 
 //routes
+app.use("/", (req, res) => {
+  res.send({ message: "Server live" });
+});
 app.use("/register", RegisterRoutes);
 app.use("/login", LoginRoutes);
 app.use("/bookroom", BookroomRoutes);
