@@ -19,9 +19,9 @@ app.use(express.json());
 app.use(cors());
 
 //routes
-app.use("/", (req, res) => {
-  res.send({ message: "Server live" });
-});
+// app.use("/", (req, res) => {
+//   res.send({ message: "Server live" });
+// });
 app.use("/register", RegisterRoutes);
 app.use("/login", LoginRoutes);
 app.use("/bookroom", BookroomRoutes);
