@@ -13,13 +13,16 @@ function Bookroom() {
     console.log("book room");
 
     try {
-      const response = await axios.post("http://localhost:5000/bookroom", {
-        email,
-        name,
-        type,
-        duration,
-        requireDate,
-      });
+      const response = await axios.post(
+        "https://test-react-1le8.onrender.com/bookroom",
+        {
+          email,
+          name,
+          type,
+          duration,
+          requireDate,
+        }
+      );
       console.log("data snet");
       setResult(response.data);
       console.log(response.data);

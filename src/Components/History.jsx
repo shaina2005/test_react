@@ -6,7 +6,7 @@ function History() {
   const fetchRoom = async (e) => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/bookroom/${email}`
+        `https://test-react-1le8.onrender.com/bookroom/${email}`
       );
       console.log(response.data);
     } catch (error) {

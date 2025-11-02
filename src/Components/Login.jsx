@@ -11,7 +11,7 @@ function Login({ setIsLogin }) {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:5000/login",
+        "https://test-react-1le8.onrender.com/login",
         { email, password },
         {
           headers: { "Content-Type": "application/json" },
@@ -24,7 +24,6 @@ function Login({ setIsLogin }) {
       sessionStorage.setItem("isLogin", response.data.success);
       sessionStorage.setItem("userEmail", response.data.user.email);
       console.log(sessionStorage.getItem("userEmail"));
-      
     } catch (error) {
       setResult(error.response.data);
       console.log("error in handleLogin frontend : ", error.response);
